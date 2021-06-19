@@ -1,0 +1,110 @@
+.heading_1{
+    
+    width:280px;
+    color:black;
+    margin: 10px auto;
+    margin-top: 35px;
+    font-size:47px;
+    font-weight: bolder;
+    font-family: 'Oxygen', sans-serif;
+    
+}
+html{
+    background-color: #caf4ffe0;
+    /* background: linear-gradient( to bottom, #6770ee8a, #a0daff);
+    background-repeat: no-repeat; */
+    /* background-attachment: fixed; */
+    font-family: 'Oxygen', sans-serif;
+
+}
+
+.main
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 75px;
+}
+
+.content
+{
+    margin: 25px 25px;
+    background-color: #2890ff;
+    color: white;
+    width: 100px;
+    padding: 5px;
+    border-radius: 8px;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+.content:hover
+{
+    /* border:2px solid red; */
+    background-color: #0168d8;
+    color:rgb(60, 255, 0);
+    font-weight: 600;
+    /* box-shadow: inset 0 0 10px #000000; */
+    /* box-shadow: inset 0 3px 9px white; */
+}
+
+
+.image
+{
+    display: block;
+    margin: 2px auto;
+}
+
+
+/* Styling of the navigation bar starts. */
+.navigate
+{
+
+    background-color: #007bff;
+    border-radius: 30px;
+}
+
+.navigate ul{
+    overflow: auto;
+}
+.navigate li
+{
+    float: left;
+    list-style: none;
+    margin: 8px 10px;
+    padding-top: 5px;
+}
+
+.navigate a
+{
+    padding: 3px 5px;
+    color: white;
+    text-decoration: none;
+}
+
+.navigate a:hover
+{
+    color:rgb(60, 255, 0);
+    font-weight: 600;
+}
+
+.navigate a:active
+{
+    color:rgb(0, 4, 255);
+}
+
+.navigate input
+{
+    border: 2px solid #68edff;
+    border-radius: 15px;
+    width: 129px;
+    padding: 2px 17px;
+}
+.search
+{
+    color: white;
+    float: right;
+    padding: 11px 60px;
+}
+/* Styling of the navigation bar ends. */
