@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML forms</title>
+</head>
+<body>
+    <h1>This is HTML Forms</h1>
+
+    <form action="backend.php">
+
+        <div>
+            <label for="name"> Name</label>
+          <input type="text" name="checkname" id="name">
+        </div>
+        <br>
+
+        <div>
+            Class: <input type="text" name="class">
+        </div>
+        <br>
+
+        <div>
+            Email id: <input type="email" name="email">
+        </div>
+        <br>
+
+        <div>
+            Date: <input type="datetime-local" name="dateandtime">
+        </div>
+        <br>
+        
+        <div>
+            Bonus: <input type="number" name="checknumber">
+        </div>
+        <br>
+        
+        <div>
+            Gender: Male<input type="radio" name="checkgender"> Female<input type="radio" name="checkgender"> Others<input type="radio" name="checkgender">
+        </div>
+        <br>
+        
+        <div>
+            Range: <input type="range" name="checkrange">
+        </div>
+        <br>
+         
+        <div>
+            Are you eligible: <input type="checkbox" name="checkrange">
+        </div>
+        <br>   
+         
+        <div>
+            Favourite Colour: <input type="color" name="checkrange">
+        </div>
+        <br>
+         
+        <div>
+            Upload File: <input type="file" name="checkfile">
+        </div>
+        <br>
+         
+        <div>
+            Enter Password: <input type="password" name="checkpassword">
+        </div>
+        <br>
+         
+        <div>
+            Write a bio: <br> <textarea name="checkbio" cols="30" rows="10"></textarea>
+        </div>
+        <br>
+           
+        <div>
+            Agree with Terms & Conditions: <input type="checkbox" name="tnc" checked>
+        </div>
+        <br>  
+        
+        <div>
+          
+            <label for="car">CAR</label>
+            <select name="checkcar" id="car">
+                <option value="mer">Mercedes</option>
+                <option value="lamo" selected>Lamborghini</option>
+                <option value="bmw">BMW</option>
+                <option value="au">Audi</option>
+            </select>
+            
+        </div>
+        <br>  
+
+        <div>
+            <input type="submit" value="Submit Here">
+            <input type="reset" value="Reset Now">
+        </div>
+
+        <button class="btn">Guest Login</button>
+        
+
+
+    </form>
+</body>
+</html>
