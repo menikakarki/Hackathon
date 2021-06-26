@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Friendly Bug </title>
+    <link rel="stylesheet" href="/static/CSS/home.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@700&display=swap" rel="stylesheet">
+    
+    <script>
+    function doctor()
+    {
+    window.open("/doctor","_self")
+    }
+    function patient()
+    {
+    window.open("/patient","_self")
+    }function guest()
+    {
+    window.open("/guest","_self")
+    }
+    </script>
+
+
+</head>
+<body>
+    
+    <nav class="navigate">
+        
+        <ul>
+            
+            <li><a href="/">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contacts</a></li>
+            <li><a href="#">More</a></li>
+            <div class="search">
+                <input type="text" name="search" id="searchbox" placeholder="Search Webiste Here">
+            </div>
+        </ul>
+    </nav>
+    
+    <h1 class="heading_1" id="h1">Friendly bug</h1>
+
+    <img src="https://png2.cleanpng.com/sh/f15936c697d62eeef8615b68cc946621/L0KzQYm3U8AzN5doj5H0aYP2gLBuTgBpgaRue9tqbj3nebLphgRme15yfd51aYT4g37qjB1xfaVqip9taYPoccTsTgBzbadqRdZ4Y4Tygn7ojvQua5DyiOd9ZYKwRbKCWfI5OpVoedZsNUixRYS4WcI1PmQ2TaQ5MEK2RYqAWMMxQV91htk=/kisspng-physician-diabetes-mellitus-computer-disease-preve-doctor-and-computer-5a99b82dcadc58.5319246315200235978309.png" alt="Network Error" class="image">
+
+    <div class="main">
+
+        <button class="content"  id="doctor" onclick ="doctor()">DOCTOR</button>
+        <button class="content" id="patient" onclick="patient()">PATIENT</button>
+        <button class="content" id="guest" onclick="guest()">GUEST</button>
+    </div>
+
+</body>
+</html>

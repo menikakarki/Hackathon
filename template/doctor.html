@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Doctors {% endblock title %}
+{% block linkhref %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+{%endblock linkhref %}
+
+{% block style %}
+.maincont {
+display: flex;
+align-items: flex-start;
+height: 500px;
+
+}
+
+.form-signin {
+width: 100%;
+max-width: 330px;
+padding: 15px;
+margin: 0px auto;
+}
+
+.form-signin .checkbox {
+font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+z-index: 2;
+}
+
+.form-signin input[type="email"] {
+margin-bottom: -1px;
+border-bottom-right-radius: 0;
+border-bottom-left-radius: 0;
+}
+
+.form-floating {
+margin: 10px 0px;
+}
+
+.form-signin input[type="password"] {
+margin-bottom: 10px;
+border-top-left-radius: 0;
+border-top-right-radius: 0;
+}
+
+.bd-placeholder-img {
+font-size: 1.125rem;
+text-anchor: middle;
+-webkit-user-select: none;
+-moz-user-select: none;
+user-select: none;
+}
+
+@media (min-width: 768px) {
+.bd-placeholder-img-lg {
+font-size: 3.5rem;
+}
+}
+
+.register
+{
+text-align: center;
+margin:0.5rem;
+}
+
+.modal-header
+{
+    margin-left:176px;
+}
+
+{% endblock style %}
+{% block body %}
+
+<div class="container-fluid px-0">
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://source.unsplash.com/1600x600/?cheerful" class="d-block w-100" alt="Network Error">
+            </div>
+            <div class="carousel-item">
+                <img src="https://source.unsplash.com/1600x600/?health,fitness" class="d-block w-100"
+                    alt="Network Error">
+            </div>
+            <div class="carousel-item">
+                <img src="https://source.unsplash.com/1600x600/?fruits,health" class="d-block w-100"
+                    alt="Network Error">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+
+<div class="maincont text-center">
+
+    <main class="form-signin">
+        <form method="post" action="/doctorlogin">
+            {% csrf_token %}
+            <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+            <div class="form-floating">
+                <input type="text" class="form-control" id="floatingInput" name="doctorloginusername" placeholder="Username" required>
+                <label for="floatingInput">Username</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" name="doctorloginpassword"
+                    placeholder="Password" required>
+                <label for="floatingPassword">Password</label>
+            </div>
+
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+        </form>
+        <p class="register">Not Registered Yet? <a href="#" data-bs-toggle="modal" data-bs-target="#signupmodal">SignUp</a></p>
+
+        <!-- SignUp Modal -->
+        <div class="modal fade" id="signupmodal" tabindex="-1" aria-labelledby="signupmodal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title " id="signupmodal">SignUp Here!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                            <form method="POST" action="/doctorsignup">
+                                {% csrf_token %}
+                            <div class="mb-3">
+                              <label for="doctorusername" class="form-label">Username</label>
+                              <input type="text" class="form-control" id="doctorusername" name="doctorusername" placeholder="Choose Your Username"required>
+                            </div>
+                            <div class="mb-3">
+                              <label for="doctorfname" class="form-label">First Name</label>
+                              <input type="text" class="form-control" id="doctorfname" name="doctorfname" placeholder="Enter Your First Name" required>
+                            </div>
+                            <div class="mb-3">
+                              <label for="doctorlname" class="form-label">Last Name</label>
+                              <input type="text" class="form-control" id="doctorlname" name="doctorlname" placeholder="Enter Your Last Name" required>
+                            </div>
+                            <div class="mb-3">
+                              <label for="doctormobile" class="form-label">Mobile Number</label>
+                              <input type="text" class="form-control" id="doctormobile" name="doctormobile" placeholder="Enter Your Mobile Number" required>
+                            </div>
+                            <div class="mb-3">
+                              <label for="doctoremail" class="form-label">Email address</label>
+                              <input type="email" class="form-control" id="doctoremail" name="doctoremail" placeholder="Enter Your E-mail Id" required >
+                            </div>
+                            <div class="mb-3">
+                              <label for="registrationnumber" class="form-label">Medical Registration Number</label>
+                              <input type="text" class="form-control" id="registrationnumber" name="registrationnumber" required>
+                            </div>
+                            <div class="mb-3">
+                              <label for="specialisation" class="form-label">Specialisation</label>
+                              <input type="" class="form-control" id="specialisation" name="specialisation" required>
+                            </div>
+                            <div class="mb-3">
+                              <label for="doctorpassword" class="form-label">Password</label>
+                              <input type="password" class="form-control" id="doctorpassword" name="doctorpassword" placeholder="Enter Your Password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Register</button>
+                          </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</div>
+
+
+
+{% endblock body %}

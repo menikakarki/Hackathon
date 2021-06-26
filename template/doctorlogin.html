@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Doctor Loggged In| Friendly Bug</title>
+    <link rel="stylesheet" href="front_page.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+
+        .alert-success
+        {
+            color: #71186e;
+            background-color: #fac2ff;
+            border-color: #7c5b8c;
+        }
+        html {
+            {% comment %} background-color: #caf4ffe0; {% endcomment %}
+            /* background: linear-gradient( to bottom, #6770ee8a, #a0daff);
+            background-repeat: no-repeat; */
+            /* background-attachment: fixed; */
+            font-family: 'Oxygen', sans-serif;
+
+        }
+
+        /* Styling of the navigation bar starts. */
+        .navigate {
+
+            background-color: #007bff;
+            border-radius: 30px;
+            position: sticky;
+            top: 8px;
+            z-index: 5;
+            margin-top: 8px;
+        }
+
+        .navigate ul {
+            overflow: auto;
+        }
+
+        .navigate li {
+            float: left;
+            list-style: none;
+            margin: 8px 10px;
+            padding-top: 5px;
+        }
+
+        .navigate a {
+            padding: 3px 5px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .navigate a:hover {
+            color: rgb(60, 255, 0);
+            font-weight: 600;
+        }
+
+        .navigate a:active {
+            color: rgb(0, 4, 255);
+        }
+
+        .navigate input {
+            border: 2px solid #68edff;
+            border-radius: 15px;
+            width: 129px;
+            padding: 2px 17px;
+        }
+
+        .search {
+            color: white;
+            float: right;
+            padding: 11px 0px;
+        }
+
+        .btn
+        {
+            float: right;
+            padding: 0px 0px;
+            margin: 12px 70px;
+            margin-left: 40px;
+            width: 6%;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+        /* Styling of the navigation bar ends. */
+
+         
+    </style>
+
+    <script>
+    function logout()
+    {
+    window.open("/doctorlogout","_self")
+    }
+    </script>
+
+</head>
+
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <nav class="navigate">
+
+        <ul>
+
+            <li><a href="/">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contacts</a></li>
+            <li><a href="#">More</a></li>
+            <button type="button" class="btn btn-dark" onclick ="logout()">Logout</button>
+            <div class="search">
+                <input type="text" name="search" id="searchbox" placeholder="Search Webiste Here">
+            </div>
+
+            
+        </ul>
+    </nav>
+
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0" role="alert">
+        <strong>{{ message }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <p>Welcome! {{request.user}}</p>
+</body>
+
+</html>
